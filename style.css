@@ -11,6 +11,14 @@
     width: 100%;
 }
 
+.img-info p{
+    padding: 0px 0px 10px;
+    font-family:'Arial';
+    font-size: 16px;
+    color: #2c2c2c;
+    line-height: 24px;
+}
+
 .img-info h1{
     padding: 10px 10px 10px;
     font-family:'Arial';
@@ -45,7 +53,7 @@
 
 .img-info table{
     width: 100%;
-    padding: 10px 50px 10px;
+    padding: 10px 50px 20px;
     font-family:'Arial';
     font-size: 16px;
     color: #2c2c2c;
