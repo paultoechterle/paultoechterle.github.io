@@ -418,7 +418,9 @@
     }
     footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
     footer a:hover { color: #fff; }
-    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { display: flex; align-items: center; opacity: 0.75; transition: opacity 0.2s; }
+    .footer-links a:hover { opacity: 1; }
     .footer-download {
       display: inline-block;
       background: var(--green);
@@ -468,18 +470,18 @@
       <img src="img/picture.jpg" alt="Dr. Paul Töchterle" />
     </div>
     <div class="header-text">
-      <p class="header-tagline">Geologe &amp; Energieplanungsexperte</p>
+      <p class="header-tagline">Geologe &amp; Energie-Experte</p>
       <h1>Dr. Paul Töchterle</h1>
       <div class="header-meta">
         <span>Wildschönau, Tirol</span>
         <a href="mailto:paul.m.toechterle@gmail.com">paul.m.toechterle@gmail.com</a>
       </div>
-      <div class="header-social">
+      <!-- <div class="header-social">
         <a href="https://www.linkedin.com/in/paul-toechterle" target="_blank"><img height="30px" src="img/LI.png" alt="LinkedIn"></a>
         <a href="https://github.com/paultoechterle/" target="_blank"><img height="30px" src="img/git.png" alt="GitHub"></a>
         <a href="https://www.researchgate.net/profile/Paul-Toechterle-2" target="_blank"><img height="30px" src="img/RG.png" alt="ResearchGate"></a>
         <a href="https://scholar.google.at/citations?user=zbVWkZsAAAAJ&hl=de" target="_blank"><img height="30px" src="img/gscholar.png" alt="Google Scholar"></a>
-      </div>
+      </div> -->
     </div>
   </div>
 </header>
@@ -492,7 +494,7 @@
   <section id="profil">
     <div class="section-header"><h2>Profil</h2></div>
     <p class="profil-text">
-      Geologe und Energieplanungsexperte mit Schwerpunkt auf Wasser- und Energieressourcen in alpinen Regionen.
+      Geologe und Energie-Experte mit Schwerpunkt auf Wasser- und Energieressourcen in alpinen Regionen.
       Ich verbinde hydrogeologische Feldkompetenz, komplexe Datenanalysen und die Entwicklung praxisorientierter
       digitaler Tools zu integrierten Lösungen für Planer, Berater und öffentliche Auftraggeber.
       Mehrjährige Erfahrung in der Übersetzung komplexer technischer Inhalte für nicht-technische Entscheidungsträger
@@ -839,11 +841,11 @@
 <footer>
   <p>Dr. Paul Töchterle · paul.m.toechterle@gmail.com</p>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/paul-toechterle" target="_blank">LinkedIn</a>
-    <a href="https://github.com/paultoechterle/" target="_blank">GitHub</a>
-    <a href="https://www.researchgate.net/profile/Paul-Toechterle-2" target="_blank">ResearchGate</a>
-    <a href="https://scholar.google.at/citations?user=zbVWkZsAAAAJ&hl=de" target="_blank">Google Scholar</a>
-    <a href="https://orcid.org/0000-0003-1738-5771" target="_blank">ORCID</a>
+    <a href="https://www.linkedin.com/in/paul-toechterle" target="_blank"><img src="img/LI.png" height="22" alt="LinkedIn"></a>
+    <a href="https://github.com/paultoechterle/" target="_blank"><img src="img/git.png" height="22" alt="GitHub"></a>
+    <a href="https://www.researchgate.net/profile/Paul-Toechterle-2" target="_blank"><img src="img/RG.png" height="22" alt="ResearchGate"></a>
+    <a href="https://scholar.google.at/citations?user=zbVWkZsAAAAJ&hl=de" target="_blank"><img src="img/gscholar.png" height="22" alt="Google Scholar"></a>
+    <a href="https://orcid.org/0000-0003-1738-5771" target="_blank"><img src="img/ORCid.png" height="22" alt="ORCID"></a>
   </div>
   <a class="footer-download" href="cv_toechterle.pdf" target="_blank">↓ PDF herunterladen</a>
 </footer>
