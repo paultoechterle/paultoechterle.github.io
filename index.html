@@ -1,794 +1,856 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <title>Curriculum Vitae - Paul Töchterle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Paul Töchterle – Curriculum Vitae</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:   #1e2d3d;
+      --slate:  #2f4054;
+      --green:  #2e7d5e;
+      --green-light: #3a9971;
+      --accent: #e8f4f0;
+      --rule:   #c8ddd8;
+      --text:   #1e2d3d;
+      --muted:  #607080;
+      --bg:     #f9f8f6;
+      --white:  #ffffff;
+      --serif:  'Libre Baskerville', Georgia, serif;
+      --sans:   'Source Sans 3', 'Helvetica Neue', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 12px 18px;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ── HERO / HEADER ── */
+    header {
+      background: var(--navy);
+      color: #fff;
+      padding: 60px 0 52px;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .header-photo img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--green-light);
+      display: block;
+    }
+    .header-text h1 {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .header-tagline {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 14px;
+    }
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+    }
+    .header-meta a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .header-meta a:hover { color: #fff; }
+    .header-social {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+    }
+    .header-social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      border-radius: 3px;
+      transition: all 0.2s;
+    }
+    .header-social a:hover { color: #fff; border-color: var(--green-light); background: rgba(46,125,94,0.2); }
+
+    /* ── AWARD BADGE ── */
+    .award-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(46,125,94,0.1);
+      border: 1px solid var(--green-light);
+      color: var(--green);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-top: 6px;
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* ── SECTION ── */
+    section {
+      padding-top: 52px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .section-header h2 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── PROFIL ── */
+    #profil .profil-text {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--text);
+      max-width: 780px;
+    }
+    #profil .profil-highlights {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .highlight-pill {
+      background: var(--accent);
+      border-left: 3px solid var(--green);
+      padding: 10px 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy);
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* ── TIMELINE / EXPERIENCE ── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0 28px;
+      padding: 20px 0;
+      border-bottom: 1px solid #e8e8e4;
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .tl-date {
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--green);
+      text-transform: uppercase;
+      padding-top: 2px;
+      line-height: 1.4;
+    }
+    .tl-date .tl-org {
+      display: block;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 11.5px;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      margin-top: 3px;
+    }
+    .tl-content h3 {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+    .tl-content p {
+      font-size: 14px;
+      color: #4a5a6a;
+      line-height: 1.65;
+      margin-bottom: 6px;
+    }
+    .tl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 8px;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--accent);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    /* ── PROJEKTE ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid #e0e8e4;
+      border-top: 3px solid var(--green);
+      padding: 18px 20px;
+      border-radius: 2px;
+    }
+    .project-card h3 {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .project-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .project-card .proj-tags { margin-top: 10px; }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .skill-group h3 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px dashed #ebebeb;
+      font-size: 13.5px;
+    }
+    .skill-row:last-child { border-bottom: none; }
+    .skill-name { color: var(--text); }
+    .skill-level {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 2px;
+    }
+    .level-expert   { background: var(--green);  color: #fff; }
+    .level-advanced { background: #5b9fbf; color: #fff; }
+    .level-basic    { background: #dde4e8; color: #607080; }
+
+    /* ── EXPEDITIONS ── */
+    .expedition-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 0 28px;
+      padding: 14px 0;
+      border-bottom: 1px solid #e8e8e4;
+      font-size: 13.5px;
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-where {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 13px;
+    }
+    .exp-where span { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+    .exp-desc { color: #4a5a6a; line-height: 1.6; }
+
+    /* ── PUBS ── */
+    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .pub-list li {
+      font-size: 13px;
+      color: #4a5a6a;
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+    }
+    .pub-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .pub-list li a { color: var(--green); text-decoration: none; }
+    .pub-list li a:hover { text-decoration: underline; }
+    .pub-list li strong { color: var(--navy); }
+
+    /* ── MISC TABLES ── */
+    .two-col { display: grid; grid-template-columns: 160px 1fr; gap: 0; }
+    .two-col-row {
+      display: contents;
+    }
+    .two-col-row > * {
+      padding: 7px 0;
+      border-bottom: 1px solid #ebebeb;
+      font-size: 13.5px;
+    }
+    .two-col-row > *:last-child { padding-left: 12px; }
+    .two-col-label { font-weight: 700; color: var(--navy); font-size: 13px; }
+
+    /* ── LEHRE ── */
+    .teach-group { margin-bottom: 20px; }
+    .teach-group h3 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .teach-group ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .teach-group li {
+      font-size: 13.5px;
+      color: #4a5a6a;
+      padding-left: 14px;
+      position: relative;
+    }
+    .teach-group li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: 10px;
+      top: 3px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 40px;
+      font-size: 12px;
+    }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
+
+    /* ── PDF DOWNLOAD ── */
+    .download-bar {
+      background: var(--accent);
+      border-top: 1px solid var(--rule);
+      text-align: center;
+      padding: 16px;
+    }
+    .download-bar a {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 22px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      transition: background 0.2s;
+    }
+    .download-bar a:hover { background: var(--green-light); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .header-inner { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+      .header-photo img { margin: 0 auto; }
+      .header-social { justify-content: center; }
+      .header-meta { justify-content: center; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+      .exp-item { grid-template-columns: 1fr; gap: 4px; }
+      main { padding: 0 20px 60px; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="header" id="header">
-  <h1 style="color: #333333;">Dr. Paul Töchterle</h1>
-  <img src="img/picture.jpg" style="padding: 10px 10px 10px; width: 300px;"">
-</div>
-
-<div class="wrapper">
-
-<div id="navbar">
-  <a class="active" href="#header">Home</a>
-  <a href="#berufserfahrung">Berufserfahrung</a>
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#profil">Profil</a>
+  <a href="#erfahrung">Erfahrung</a>
   <a href="#ausbildung">Ausbildung</a>
-  <a href="#projects">Projekte</a>
-  <a href="#it">Skills</a>
+  <a href="#projekte">Projekte</a>
+  <a href="#skills">Skills</a>
   <a href="#expeditionen">Expeditionen</a>
-  <a href="#arbeiten">Publikationen</a>
-  <a href="#lehre">Sonstiges</a>
-</div>
+  <a href="#publikationen">Publikationen</a>
+  <a href="#lehre">Lehre</a>
+</nav>
 
-<!-- content starts here -->
-
-<div class="content" id="profil">
-  <h2>Profil</h2>
-  <ul>
-    <li class="ListParagraph">Geologe mit Spezialgebiet Hydrogeologie und Klimawandelanpassung</li>
-    <li class="ListParagraph">Expertise in statistischer Analyse von Zeitreihen und Geoinformatik</li>
-    <li class="ListParagraph">Breites technisches Grundverständnis</li>
-    <li class="ListParagraph">Vielseitig einsetzbar</li>
-  </ul>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="berufserfahrung">
-  <h2>Berufserfahrung</h2>
-  <table>
-    
-    <tr>
-      <td>2024 - laufend</td>
-      <td><p><strong>Projektleiter</strong> <span class="SubtleEmphasis">Energieagentur Tirol</span></p>
-      <p>Konzeptionierungen und Machbarkeitsstudien im Bereich Trinkwasserversorgung, Kleinwasserkraftanlagen, kommunale Energieraumplanung und Geothermie. <br \> 
-        Aufgabenfelder: Hydro(geo)logische Geländearbeit, räumliche Analysen,  Niederschlag-Abflussmodellierung, Automatisierung</p>
-      </td>
-      </tr>
-    <tr>
-    <td>2019 – 2024</td>
-    <td><p><strong>Universitätsassistent</strong> <span class="SubtleEmphasis">Univ. Innsbruck</span></p>
-    <p>Forschung im Bereich Permafrost und Klimawandel (Laborarbeit, Expeditionen und Geländearbeit, numerische Modellierung, selbstständige Lehrtätigkeit)</p>
-    </td>
-    </tr>
-    <tr>
-    <td>2018 – 2020</td>
-    <td><p><strong>Labormanager</strong> <span class="SubtleEmphasis">Karlsruhe Institut für Technologie (KIT) – Campus Garmisch-Partenkirchen</span></p>
-    <p>Betreuung des Labors für Stabile Isotope; CHNO Isotope in biogeochemischen Systemen; Methodenentwicklung; Automatisierung von Messverfahren und Wartung</p>
-    </td>
-    </tr>
-    <tr>
-    <td>2014 – 2018</td>
-    <td><p><strong>Laborassistent</strong> <span class="SubtleEmphasis">Univ. Innsbruck</span></p>
-    <p>Analyse und Wartungsarbeiten in den Labors der Arbeitsgruppe Quartärgeologie; Geländearbeit an diversen Projekten (z.B. Höhlenexpeditionen, Rammkernsondierungen, hydro(geo)logische Messungen)</p>
-    </td>
-    </tr>
-    <tr>
-    <td>2010</td>
-    <td><p><strong>Center Angestellter</strong> <span class="SubtleEmphasis">UPS Paketdienst</span></p>
-    <p>Paketlogistik in der Frühschicht</p>
-    </td>
-    </tr>
-    <tr>
-    <td>2008 – 2012</td>
-    <td><p><strong>Freiberuflicher Tontechniker</strong> <span class="SubtleEmphasis">selbstständig</span></p>
-    <p>Konzerte, Konferenztechnik, Theater, Tonstudio</p>
-    </td>
-    </tr>
-  </table>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="ausbildung">
-  <h2>Ausbildung</h2>
-  <table>
-    <tr>
-      <td width="100px">2019 – 2023</td>
-                  <td><strong>PhD Erdwissenschaften</strong> <span class="SubtleEmphasis">Univ. Innsbruck</span></td>
-    </tr>
-              <tr>
-      <td>2015 – 2018</td>
-                  <td><strong>MSc Erdwissenschaften</strong> <span class="SubtleEmphasis">Univ. Innsbruck</span></td>
-    </tr>
-              <tr>
-      <td>2012 – 2015</td>
-                  <td><strong>BSc Erdwissenschaften</strong> <span class="SubtleEmphasis">Univ. Innsbruck</span></td>
-    </tr>
-              <tr>
-      <td>2011 – 2012</td>
-                  <td><strong>BSc Physik / BSc Soziologie</strong> <span style="font-style: italic; font-size: small;">(nicht abgeschlossen)</span> <span class="SubtleEmphasis">Univ. Innsbruck</span></td>
-    </tr>
-              <tr>
-      <td>2004 – 2006</td>
-                  <td><strong>Audio Engineering Diplom</strong> <span class="SubtleEmphasis">SAE München</span></td>
-    </tr>
-  </table>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="projects">
-  <h2>Projekte (Auswahl)</h2>
-  <ul>
-    <li class="ListParagraph">
-        <span><strong>Großquellenhydrogeologie Tirol (GQH)</strong></span><br \>
-        <span>Beurteilung aller Tiroler Großquellen zur strategischen Trinkwasserversorgung</span><br />
-        <span class="SubtleEmphasis">Datenanalyse, Geländearbeit, Einzugsgebiete, Klimawandel-Resilienz</span>
-    </li>
-    <li class="ListParagraph">
-        <span><strong>Universelles Abflussmodell Tirol</strong></span><br \>
-        <span>Entwicklung eines universellen Niederschlags-Abfluss Modell für Tirol mittels machine learning</span><br />
-        <span class="SubtleEmphasis">Datenanalyse, künstliche Intelligenz</span>
-    </li>
-    <li class="ListParagraph">
-        <span><strong>Anergienetz Auffach/Wildschönau</strong></span><br \>
-        <span>Machbarkeitsstudie für ein Niedertemperatur-Wärmenetz durch thermische Nutzung von Quellwasser</span><br />
-        <span class="SubtleEmphasis">Projektleitung, Konzeptionierung, Bedarfsanalyse</span>
-    </li>
-    <li class="ListParagraph">
-        <span><strong>Kommunale Energieversogungskonzepte</strong></span><br \>
-        <span>Analyse von Energiebedarf und Ressourcendargebot für Gemeinden</span><br />
-        <span class="SubtleEmphasis">Potenzialanalysen (Wasserkraft, Umweltwärme, Grundwassernutzung)</span>
-    </li>
-    <li class="ListParagraph">
-        <span><strong>Mount Resilience</strong></span><br \>
-        <span>EU Projekt zur Klimawandelanpassung in Bergregionen </span><br />
-        <span class="SubtleEmphasis">Auswertung von Re-analysis Datensätzen und Klimamodellen auf Gemeindeebene</span>
-    </li>
-    <li class="ListParagraph">
-        <span><strong>Wasserkraftpotenzial Reutte</strong></span><br \>
-        <span>Potenzialstudie für Wasserkraftnutzung im gesamten Bezirk</span><br />
-        <span class="SubtleEmphasis">Abflusslinienpotenzial, Niederschlag-Abflussmodellierung</span>
-    </li>
-  </ul>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="it">
-  <h2>Skills</h2>
-  <table>
-    <tr>
-    <td width="50%">
-    <p>
-    <strong>Programmierung</strong>
-    </p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    Python - scientific stack <span class="SubtleEmphasis">(NumPy, Pandas, Matplotlib, SciPy, Xarray)</span>
-    </td>
-    <td>
-    Experte
-    </td>
-    </tr>
-    <tr>
-    <td>
-    Python - geospatial stack <span class="SubtleEmphasis">(GDAL, Cartopy, GeoPandas)</span>
-    </td>
-    <td>
-    Experte
-    </td>
-    </tr>
-    <tr>
-    <td>
-    Python - deep learning <span class="SubtleEmphasis">(Pytorch, Scikit-learn, TensorFlow)</span>
-    </td>
-    <td>
-    Grundkenntnisse
-    </td>
-    </tr>
-    <tr>
-    <td>
-    SQL
-    </td>
-    <td>
-    fortgeschritten
-    </td>
-    </tr>
-    <tr>
-    <td>
-    R Studio
-    </td>
-    <td>
-    Grundkenntnisse
-    </td>
-    </tr>
-    <tr>
-    <td>
-    Matlab
-    </td>
-    <td>
-    Grundkenntnisse
-    </td>
-    </tr>
-    <tr>
-    <td>
-    HTML/CSS
-    </td>
-    <td>
-    Grundkenntnisse
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <span class="SubtleEmphasis">&#xa0;</span>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <p>
-    <strong>CAD &amp; GIS</strong>
-    </p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    QGIS
-    </td>
-    <td>
-    Experte
-    </td>
-    </tr>
-    <tr>
-    <td>
-    ArcGIS Pro
-    </td>
-    <td>
-    Experte
-    </td>
-    </tr>
-    <tr>
-    <td>
-    AutoCAD
-    </td>
-    <td>
-    Grundkenntnisse
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <span class="SubtleEmphasis">&#xa0;</span>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <p>
-    <strong>Office Anwendungen</strong>
-    </p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    MS Office
-    </td>
-    <td>
-    Experte
-    </td>
-    </tr>
-    <tr>
-    <td>   
-    Corel Draw    
-    </td>
-    <td>    
-    Experte    
-    </td>
-    </tr>
-    <tr>
-    <td>    
-    Agisoft Metashape    
-    </td>
-    <td>    
-    Grundkenntnisse    
-    </td>
-    </tr>
-    <tr>
-    <td>    
-    Gimp
-    </td>
-    <td>
-    Grundkenntnisse 
-    </td>
-    </tr>
-    <tr>
-    <td>  
-    Inkskape 
-    </td>
-    <td>
-    Grundkenntnisse
-    </td>
-    </tr>
-  </table>
-</div>
-<!--
-<div class="content" style="overflow-x:auto;" id="labor">
-  <h2>Labormethoden</h2>
-  <table>
-    <tr>
-    <td colspan="4">
-    <strong>Experten-Level </strong><em>(spezialisierte Anwendungen und Gerätewartung)</em>
-    </td>
-    </tr>
-    <tr>
-    <td width="20%">
-    (GC-) IRMS
-    </td>
-    <td>
-    <span class="SubtleEmphasis">Thermo Scientific Delta XLplus, Delta XP, Delta Vplus, Delta V Advantage</span>
-    </td>
-    <td>
-    Stabile Isotopeverhältnisse (CNHO) und Gaschromatographie an diversen Proben (Feststoffe, Lösungen, Gase)
-    </td>
-    </tr>
-    <tr>
-    <td>
-    EA (-IRMS)
-    </td>
-    <td>
-    <span class="SubtleEmphasis">Thermo Scientific TC/EA, Flash EA, EA Isolink; Eltra Helios CS-580A</span>
-    </td>
-    <td>
-    Elementaranalyse, kombinierte Analyse von stabilen Isotopeverhältnissen (CNHO)
-    </td>
-    </tr>
-    <tr>
-    <td>
-    IRIS / CRDS
-    </td>
-    <td>
-    <span class="SubtleEmphasis">Thermo Scientific Delta Ray IRIS; Picarro L2130-i, L2140-i </span>
-    </td>
-    <td>
-    Stabile Isotopeverhältnisse (CO<span><sub>2</sub></span>, H<span><sub>2</sub></span>O), Methodenentwicklung für in-situ Messungen im Gelände
-    </td>
-    </tr>
-    <tr>
-    <td>
-    ICP-MS
-    </td>
-    <td>
-    <span class="SubtleEmphasis">Thermo Scientific Neptune plus MC-ICP-MS</span>
-    </td>
-    <td>
-    <span><sup>230</sup></span>Th/U Altersbestimmung
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <span><sup>&#xa0;</sup></span>
-    </td>
-    </tr>
-    <tr>
-    <td colspan="4">
-    <strong>Anwender-Level </strong><em>(Analysen nach Protokoll)</em>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    SEM
-    </td>
-    <td>
-    <span class="SubtleEmphasis">JEOL JSM-6010LV</span>
-    </td>
-    <td>
-    Rasterelektronen Mikroskopie
-    </td>
-    </tr>
-    <tr>
-    <td>
-    EPMA
-    </td>
-    <td>
-    <span class="SubtleEmphasis">JEOL Superprobe 8100</span>
-    </td>
-    <td>
-    Elektronenmikrosonde (EDX, WDX)
-    </td>
-    </tr>
-    <tr>
-    <td>
-    µXRF
-    </td>
-    <td>
-    <span class="SubtleEmphasis">Bruker Tornado M4</span>
-    </td>
-    <td>
-    Mikro-Röntgenfluoreszenz
-    </td>
-    </tr>
-    <tr>
-    <td>
-    FTIR
-    </td>
-    <td>
-    <span class="SubtleEmphasis">Bruker Vertex 70</span>
-    </td>
-    <td>
-    Fourier-Transformations-Infrarotspektroskopie
-    </td>
-    </tr>
-    <tr>
-    <td>
-    Horiba Jobin-Yvon
-    </td>
-    <td>
-    <span class="SubtleEmphasis">Labram-HR8000</span>
-    </td>
-    <td>
-    Raman Spektroskopie
-    </td>
-    </tr>
-  </table>
-</div>
--->
-
-<div class="content" style="overflow-x:auto;" id="expeditionen">
-  <h2>Expeditionen und Geländearbeit</h2>
-  <table>
-    <tr>
-      <td width="30%">
-      <p>
-      <strong>Tirol</strong>
-      </p>
-      <p>
-      <span class="SubtleEmphasis">2024 - laufend</span>
-      </p>
-      </td>
-      <td>
-      <p>
-      Diverse hydrogeologische Geländearbeiten im Rahmen der Projekte zur strategischen Trinkwasserversorgung im Auftrag der Tiroler Landesregierung.
-      </p>
-      </td>
-      </tr>
-    <tr>
-    <td width="30%">
-    <p>
-    <strong>Großbritannien </strong>
-    </p>
-    <p>
-    <span class="SubtleEmphasis">2019 – 2022</span>
-    </p>
-    </td>
-    <td>
-    <p>
-    Mehrere Aufenthalte für Probenahmen und Vermessungen in den Karstgebieten Englands (Peak District, Mendips Hills) im Rahmen der Dissertation
-    </p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <p>
-    <strong>Nordost Grönland</strong>
-    </p>
-    <p>
-    <span class="SubtleEmphasis">2019</span>
-    </p>
-    </td>
-    <td>
-    <p>
-    Grönland-Höhlenprojekt-Expedition (unter Leitung von Prof. Gina E. Moseley): Mehrwöchige Expedition nach Kronprins-Christian Land. Hauptschwerpunkte: Höhlenforschung, Stratigraphie paläozoischer Karbonatabfolgen, Kartierung und Datierung der spätglazialen Moränenabfolgen (<a href="http://northeastgreenlandcavesproject.com/start-project/" target="_blank"><span>website</span></a>)
-    </p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <p>
-    <strong>Bayern</strong>
-    </p>
-    <p>
-    <span class="SubtleEmphasis">2018 - 2019</span>
-    </p>
-    </td>
-    <td>
-    <p>
-    Mitarbeit in mehreren bodenkundlichen Projekten der Arbeitsgruppe für Biogeochemische Kreisläufe am KIT Garmisch-Partenkirchen
-    </p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <p>
-    <strong>Russland</strong>
-    </p>
-    <p>
-    <span class="SubtleEmphasis">2017</span>
-    </p>
-    </td>
-    <td>
-    <p>
-    Ural-Expedition der Arbeitsgruppe Quartärgeologie (Leitung: Dr. Yuri Dublyansky): Erkundung und Beprobung mehrerer Höhlen in den Karstgebieten der Regionen Perm, Denezhkin Kamen und Bashkortostan
-    </p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <p>
-    <strong>Japan</strong>
-    </p>
-    <p>
-    <span class="SubtleEmphasis">2016</span>
-    </p>
-    </td>
-    <td>
-    <p>
-    Forschungsfahrt SO-251 (unter Leitung von Prof. Michael Strasser und Prof. Achim Kopf) mit dem Flaggschiff der deutschen Forschungsflotte, FS Sonne, in den Japan-Graben und den Nankai-Trog. Forschungsgebiet: Porenwasserchemie und Chemo-Stratigraphie von Sedimentkernen
-    </p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <p>
-    <strong>Österreich</strong>
-    </p>
-    <p>
-    <span class="SubtleEmphasis">2014 – 2019</span>
-    </p>
-    </td>
-    <td>
-    <p>
-    Unterstützung von Feldforschungsprojekten der Forschungsgruppe Quartär (Prof. Christoph Spötl), wie z.B. Höhlenerkundungen, Rammkernsondierungen und verschiedene hydrogeologische Feldarbeiten
-    </p>
-    </td>
-    </tr>
-  </table>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="arbeiten">
-  <h2>Wissenschaftliche Abschlussarbeiten</h2>
-  <p>
-    <strong><span>Töchterle, P.</span></strong><span>: </span><span>Permafrost response to climate change during the last glacial period</span><br /><span class="SubtleEmphasis">Dissertation, Institut für Geologie, Univ. Innsbruck, 2023 (Betreuerin - Prof. Gina Moseley)</span>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>: Cryogenic cave carbonates from the Ural Mountains (Russia) </span><br /><span class="SubtleEmphasis">MSc Arbeit, Institut für Geologie, Univ. Innsbruck, 2018 (Betreuer - Dr. Yuri Dublyansky)</span>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>: Cave ventilation, CO</span><span><sub>2</sub></span><span> partial pressure and isotopic composition: Observations from high resolution monitoring in Spannagel cave</span><br /><span class="SubtleEmphasis">BSc Arbeit, Institut für Geologie, Univ. Innsbruck, 2015 (Betreuer - Prof. Christoph Spötl)</span>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span> and Heigert, K.: Petrographical and Geochemical Analyses of two Pegmatites from the Pohorje Region (Maribor, Slovenia),</span><br /><span class="SubtleEmphasis">BSc Arbeit, Institut für Mineralogie, Univ. Innsbruck, 2015 (Betreuer - Prof. Jürgen Konzett)</span>
-  </p>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="artikel">
-  <h2>Peer-Review Artikel</h2>
-  <p>
-    <strong><span>Töchterle, P.</span></strong><span>, Steidle, S., Edwards, R. L., Dublyansky, Y., Spötl, C., Li, X., Gunn, J., and Moseley, G. E.: </span><span><sup>230</sup></span><span>Th/U Isochron Dating of Cryogenic Cave Carbonates, </span><span class="SubtleEmphasis">Geochronology, 4, 617–627,</span><span> </span><span>2022.</span>
-    <a href="https://doi.org/10.5194/gchron-4-617-2022" target="_blank">link</a>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>, Yang, F., Rehschuh, S., Rehschuh, R., Ruehr, N. K., Rennenberg, H., and Dannenmann, M.: Hydraulic Water Redistribution by Silver Fir (Abies alba Mill.) Occurring under Severe Soil Drought, </span><span class="SubtleEmphasis">Forests, 11, 162,</span><span> 2020.</span>
-      <a href="https://doi.org/10.3390/f11020162" target="_blank">link</a>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>, Baldo, A., Murton, J. B., Schenk, F., Edwards, R. L., Koltai, G., and Moseley, G. E.: Reconstructing Younger Dryas Ground Temperature and Snow Thickness from Cave Deposits, </span><span class="SubtleEmphasis">Climate of the Past 20, 1521-1535</span><span>, 2024</span>
-      <a href="https://doi.org/10.5194/cp-2023-72" target="_blank">link</a>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>, Dublyansky, Y., Stöbener, N., Mandić, M., and Spötl, C.: High-resolution isotopic monitoring of cave air CO</span><span><sub>2</sub></span><span>, </span><span class="SubtleEmphasis">Rapid communications in mass spectrometry, 31, 895–900,</span><span> 2017.</span>
-      <a href="https://doi.org/10.1002/rcm.7859" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Donner, A., </span><strong><span>Töchterle, P.</span></strong><span>, Spötl, C., Hajdas, I., Li, X., Edwards, R. L., Moseley, G. E.: Cryogenic cave minerals recorded the 1889 CE melt event in northeastern Greenland. </span><span class="SubtleEmphasis">Climate of the Past, 19, 1607–1621,</span><span> 2023.</span>
-      <a href="https://doi.org/10.5194/cp-19-1607-2023" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Vázquez, E., Teutscherova, N., Dannenmann, M., </span><strong><span>Töchterle, P.</span></strong><span>, Butterbach-Bahl, K., Pulleman, M., and Arango, J.: Gross nitrogen transformations in tropical pasture soils as affected by Urochloa genotypes differing in biological nitrification inhibition (BNI) capacity, </span><span class="SubtleEmphasis">Soil Biology and Biochemistry, 151, 108058, </span><span>2020.</span>
-      <a href="https://doi.org/10.1016/j.soilbio.2020.108058" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Németh, P., </span><strong><span>Töchterle, P.</span></strong><span>, Dublyansky, Y., Stalder, R., Molnár, Z., Klébert, S., and Spötl, C.: Tracing structural relicts of the ikaite-to-calcite transformation in cryogenic cave glendonite, </span><span class="SubtleEmphasis">American Mineralogist,</span> <span class="SubtleEmphasis">107, 1960–1967,</span><span> 2021.</span>
-      <a href="https://doi.org/10.2138/am-2022-8162" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Vidal, A., Schucknecht, A., </span><strong><span>Töchterle, P.</span></strong><span>, Linares, D. R. A., Garcia-Franco, N., Heßberg, […] Wiesmeier, M., Mueller, C. W., and Dannenmann, M.: High resistance of soils to short-term re-grazing in a long-term abandoned alpine pasture,</span><span class="SubtleEmphasis"> Agriculture, Ecosystems &amp; Environment, 300, 107008, </span><span>2020.</span>
-      <a href="https://doi.org/10.1016/j.agee.2020.107008" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Johnston, V. E., Borsato, A., Frisia, S., Spötl, C., Dublyansky, Y., </span><strong><span>Töchterle, P.</span></strong><span>, Hellstrom, J., Bajo, P., Edwards, R. L., and Cheng, H.: Evidence of thermophilisation and elevation-dependent warming during the Last Interglacial in the Italian Alps, </span><span class="SubtleEmphasis">Scientific Reports, 8, 2680, </span><span>2018.</span>
-      <a href="https://doi.org/10.1038/s41598-018-21027-3" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Rogerson, M., Dublyansky, Y., Hoffmann, D. L., Luetscher, M., </span><strong><span>Töchterle, P.</span></strong><span>, and Spötl, C.: Enhanced Mediterranean water cycle explains increased humidity during MIS 3 in North Africa, </span><span class="SubtleEmphasis">Climate of the Past, 15, 1757–1769,</span><span> 2019.</span>
-      <a href="https://doi.org/10.5194/cp-15-1757-2019" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Gunn, J., Fairchild, I. J., Moseley, G. E., </span><strong><span>Töchterle, P</span></strong><span>., Ashley, K. E., Hellstrom, J., and Edwards, R. L.: Palaeoenvironments in the central White Peak District (Derbyshire, UK): evidence from Water Icicle Close Cavern, </span><span class="SubtleEmphasis">Cave and Karst Science, 47, 153–168, </span><span>2020.</span>
-      <a href="https://experts.umn.edu/en/publications/palaeoenvironments-in-the-central-white-peak-district-derbyshire-" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Barton, H., Breley, G. J., </span><strong><span>Töchterle, P.</span></strong><span>, and Moseley, G. E.: Cryogenic features of the permafrost ice caves of Grottedal, northeast Greenland., </span><span class="SubtleEmphasis">Cave and Karst Science, 47, 93–99, </span><span>2020.</span>
-      <a href="https://zenodo.org/records/6815478" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Donner, A., </span><strong><span>Töchterle, P.</span></strong><span>, and Moseley, G. E.: Basic meteorological observations in the Centrumsø region of northeast Greenland., </span><span class="SubtleEmphasis">Cave and Karst Science, 47, 104–106, </span><span>2020.</span>
-      <a href="https://zenodo.org/records/6815966" target="_blank">link</a>
-  </p>
-  <p>
-      <span>Moseley, G. E., Barton, H., Spötl, C., </span><strong><span>Töchterle, P.</span></strong><span>, Smith, P. M., Bjerkenås, S. E., Blakeley, C., Hodkinson, P. D., Shone, R. C., Siversten, H. C., and Wright, M.: Cave discoveries and speleogenetic features in northeast Greenland., </span><span class="SubtleEmphasis">Cave and Karst Science, 47, 74–87,</span><span> 2020.</span>
-  </p>
-  <p>
-      <span>Tischler, J., </span><strong><span>Töchterle, P.</span></strong><span>, and Moseley, G. E.: Characterization of northeast Greenland cave sediments., </span><span class="SubtleEmphasis">Cave and Karst Science, 47, 100–103,</span><span> 2020.</span>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>: Appendix 7: Structure-from-Motion Photogrammetry of Caves in Greenland. </span><span class="SubtleEmphasis">Cave and Karst Science, 47, 114, </span><span>2020.</span>
-  </p>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="konferenz">
-  <h2>Internationale Konferenzbeiträge</h2>
-  <p>
-    <strong><span>Töchterle, P.</span></strong><span>, Edwards, R. L., Gunn, J., Atkinson, T., Murton, J. B., Luetscher, M., and Moseley, G. E.: Permafrost Evolution on the British Isles during the Last Deglaciation., </span><span class="SubtleEmphasis">European Geoscience Union, Vienna, </span><span class="SubtleEmphasis">2022.</span>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>, Edwards, R. L., Gunn, J., Atkinson, T., Murton, J. B., Clark, C. D., Luetscher, M., and Moseley, G. E.: A cave-based reconstruction of permafrost dynamics during the last glacial period: Evidence from the Peak District (UK), </span><span class="SubtleEmphasis">BCRA Science Meeting, Northumbria, </span><span class="SubtleEmphasis">2020.</span>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>, Edwards, R. L., Luetscher, M., and Moseley, G. E.: Permafrost Response to Millenial-Scale Climate Change during the Last Glacial Period</span><span class="SubtleEmphasis">,</span><span class="SubtleEmphasis"> Summer School on Speleothem Science, Cluj-Napoca, </span><span class="SubtleEmphasis">2019.</span>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>, Moseley, G. E., Kadebskaya, O., and Dublyansky, Y.: Stable Isotope Thermometry of Cryogenic Cave Carbonates (CCCs), </span><span class="SubtleEmphasis">INQUA, Dublin,</span><span class="SubtleEmphasis"> 2019.</span>
-  </p>
-  <p>
-      <strong><span>Töchterle, P.</span></strong><span>, Dublyansky, Y., Mandić, M., Stöbener, N., Jost, H. J., and Spötl, C.: High-Resolution Isotopic Monitoring of Cave Air CO</span><span><sub>2</sub></span><span>, </span><span class="SubtleEmphasis">European Geoscience Union, Vienna, </span><span class="SubtleEmphasis">2016.</span>
-  </p>
-  <p>
-      <span>Donner, A., </span><strong><span>Töchterle, P.</span></strong><span>, Spötl, C., Hajdas, I., Li, X., Edwards, R. L., and Moseley, G. E.: Combined </span><span><sup>14</sup></span><span>C and </span><span><sup>230</sup></span><span>Th/U dating of fine-grained cryogenic cave carbonates from a permafrost cave in Greenland, </span><span class="SubtleEmphasis">European Geoscience Union, Vienna, </span><span class="SubtleEmphasis">2022.</span>
-  </p>
-  <p>
-      <span>Donner, A., Spötl, C., </span><strong><span>Töchterle, P.</span></strong><span>, Hajdas, I., and Moseley, G. E.: First investigations of fine-grained cryogenic cave carbonates from a High-Arctic permafrost karst system in Greenland, </span><span class="SubtleEmphasis">European Geoscience Union, Vienna, </span><span class="SubtleEmphasis">2021.</span>
-  </p>
-  <p>
-      <span>Dublyansky, Y., Luetscher, M., Spötl, C., </span><strong><span>Töchterle, P.</span></strong><span>, and Kadebskaya, O.: First results on stable isotopes in fluid inclusions in cryogenic carbonates from Ural Mountains (Russia), </span><span class="SubtleEmphasis">European Geoscience Union, Vienna,</span><span class="SubtleEmphasis"> 2015.</span>
-  </p>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="sonstige">
-  <h2>Sonstige Publikationen</h2>
-  <p>
-    <span>Moody, A., Schreve, D., and </span><strong><span>Töchterle, P.</span></strong><span>: The Bagpit Depression: CCCs at Bagpit, </span><span class="SubtleEmphasis">Descent</span><span class="SubtleEmphasis">,</span><span> 280, 20–25, 2021.</span>
-  </p>
-  <p>
-      Strasser, M., Kopf, A., Abegg, F., Asada, […], <strong>Töchterle, P.</strong>: Report and preliminary results of R/V SONNE Cruise SO251: Extreme events Archived in the GEologial Record of JAPAN’s subduction margins (EAGER-JAPAN), in: <span class="SubtleEmphasis">Berichte aus dem MARUM und dem Fachbereich Geowissenschaften der Universität Bremen,</span> 2017.
-  </p>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="lehre">
-  <h2>Lehrtätigkeit</h2>
-  <h3>BSc Level Kurse</h3>
-  <ul>
-    <li>Einführung in die Geländearbeit (Univ. Innsbruck 2019 - 2023) <span class="SubtleEmphasis">Karbonat-Sedimentologie und Stratigraphie der Nördlichen Kalkalpen</span></li>
-  </ul>
-  <h3>MSc Level Kurse</h3>
-  <ul>
-    <li>Einführung in Geographische Informationssysteme (Univ. Innsbruck 2020, 2021) <span class="SubtleEmphasis">Grundlegendes Arbeiten mit GIS, räumliche Analysen und räumliche Statistik in ArcGIS Pro und QGIS</span></li>
-    <li>Räumliche Daten in den Erdwissenschaften (Univ. Innsbruck 2022, 2023) <span class="SubtleEmphasis">Fortgeschrittene räumliche Statistik (Zeitreihenanalyse, Inter- und Extrapolationsmethoden, Clusteranalyse, etc.)</span></li>
-    <li>Quartärgeolgisches Geländepraktikum (Univ. Innsbruck 2017, 2020 - 2023) <span class="SubtleEmphasis">Kartierung glazio-lakustriner Ablagerungen in inneralpinem Setting (Karwendelgebirge)</span></li>
-  </ul>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="awards">
-  <h2>Awards</h2>
-  <ul>
-    <li class="ListParagraph">
-        <span>HYPO Tirol Disssertationspreis 2024 <span class="SubtleEmphasis">für herausragende Dissertationen der Universität Innsbruck</span></span>
-    </li>
-    <li class="ListParagraph">
-        <span>Best Poster Award <span class="SubtleEmphasis">S4 Summer School, Cluj-Napoca 2019</span></span>
-    </li>
-  </ul>
-</div>
-<!--
-<div class="content" style="overflow-x:auto;" id="outreach">
-  <h2>Öffentlichkeitsarbeit</h2>
-  <ul>
-    <li class="ListParagraph">
-        <span>Koordination des Auftritts der Institute für Geologie und Mineralogie (Univ. Innsbruck) bei “Lange Nacht der Forschung” 2022</span>
-    </li>
-    <li class="ListParagraph">
-        <span>Beiträge auf </span><a href="https://www.instagram.com/uibk_climate/" target="_blank"><span>@uibk.climate (Instagram</span></a><span>)</span>
-    </li>
-    <li class="ListParagraph">
-        <span>Blog </span><a href="https://www.uibk.ac.at/de/newsroom/2016/live-vom-forschungsschiff-sonne/" target="_blank"><span>Live vom Forschungsschiff Sonne</span></a>
-    </li>
-  </ul>
-</div>
-
-<div class="content" style="overflow-x:auto;" id="service">
-  <h2>Academic Services</h2>
-  <ul>
-    <li class="ListParagraph">
-        <span>Gutachtertätigkeit für die Fachzeitschriften </span><span class="SubtleEmphasis">Geologica Carpathica</span><em><span> </span></em><span>and </span><span class="SubtleEmphasis">Die Höhle</span>
-    </li>
-    <li class="ListParagraph">
-        <span>Mitglied der Organisationskomitees der internationalen wissenschaftlichen Konferenz </span><span class="SubtleEmphasis">„Climate Change, The Karst Record IX (KR9)“</span>
-    </li>
-    <li class="ListParagraph">
-        <span>Organisation der jährlichen Seminarreihe </span><span class="SubtleEmphasis">„Climate change on long and short time scales“</span><span> der Fakultät für Geo- und Atmosphärenwissenschaften (Univ. Innsbruck)</span>
-    </li>
-    <li class="ListParagraph">
-        <span>Koordinator des Doktoratskollegiums </span><span class="SubtleEmphasis">Mountain Climate and Environment</span><span> der Universität Innsbruck</span>
-    </li>
-  </ul>
-</div>
--->
-<div class="content" style="overflow-x:auto;" id="sprachen">
-  <h2>Sprachkenntnisse</h2>
-  <table>
-    <tr>
-    <td>
-    <strong>Deutsch</strong>
-    </td>
-    <td>
-    Muttersprache
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <strong>Englisch</strong>
-    </td>
-    <td>
-    Fließend und Wort und Schrift
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <strong>Italienisch</strong>
-    </td>
-    <td>
-    Grundkenntnisse
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <strong>Niederländisch</strong>
-    </td>
-    <td>
-    Grundkenntnisse
-    </td>
-    </tr>
-    <tr><td>&#xa0;</td></tr>
-    <tr><td>&#xa0;</td></tr>
-    <tr><td>&#xa0;</td></tr>
-    <tr><td>&#xa0;</td></tr>
-  </table>
-</div>
-
-<div class="footer">
-  <div style="float: left; width: 50%;">
-  <a class="link" style="color: #1a1a1a; padding-left: 12px;" href="https://drive.google.com/file/d/11PBmNO5QSufLgmjkpquCMUAIvI47MUWg/view?usp=sharing" target="_blank">download PDF version</a>
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <div class="header-photo">
+      <img src="img/picture.jpg" alt="Dr. Paul Töchterle" />
+    </div>
+    <div class="header-text">
+      <p class="header-tagline">Geologe &amp; Energieplanungsexperte</p>
+      <h1>Dr. Paul Töchterle</h1>
+      <div class="header-meta">
+        <span>Wildschönau, Tirol</span>
+        <a href="mailto:paul.m.toechterle@gmail.com">paul.m.toechterle@gmail.com</a>
+      </div>
+      <div class="header-social">
+        <a href="https://www.linkedin.com/in/paul-toechterle" target="_blank"><img height="30px" src="img/LI.png" alt="LinkedIn"></a>
+        <a href="https://github.com/paultoechterle/" target="_blank"><img height="30px" src="img/git.png" alt="GitHub"></a>
+        <a href="https://www.researchgate.net/profile/Paul-Toechterle-2" target="_blank"><img height="30px" src="img/RG.png" alt="ResearchGate"></a>
+        <a href="https://scholar.google.at/citations?user=zbVWkZsAAAAJ&hl=de" target="_blank"><img height="30px" src="img/gscholar.png" alt="Google Scholar"></a>
+      </div>
+    </div>
   </div>
-  <div style="float: left; width: 50%; text-align: right;">
-    <a href="https://www.linkedin.com/in/paul-toechterle" target="_blank"><img height="30px" src="img/LI.png" alt="Linkedin"></a>
-    <a href="https://github.com/paultoechterle/" target="_blank"><img height="30px" src="img/git.png" alt="Linkedin"></a>
-    <a href="https://www.researchgate.net/profile/Paul-Toechterle-2" target="_blank"><img height="30px" src="img/RG.png" alt="ResearchGate"></a>
-    <a href="https://scholar.google.at/citations?user=zbVWkZsAAAAJ&hl=de" target="_blank"><img height="30px" src="img/gscholar.png" alt="Google_scholar"></a>
-    <a href="https://orcid.org/0000-0003-1738-5771" target="_blank"><img height="30px" src="img/ORCid.png" alt="ORCid"></a>
-  </div>
-  <div>
-    <span style="font-size: x-small; float: inline-end;">Impressum: Paul Töchterle, Zirmweg 332/2, A-6311 Wildschönau-Oberau; paul.m.toechterle@gmail.com</span>
-  </div>
+</header>
+
+
+<!-- ══ MAIN ══ -->
+<main>
+
+  <!-- PROFIL -->
+  <section id="profil">
+    <div class="section-header"><h2>Profil</h2></div>
+    <p class="profil-text">
+      Geologe und Energieplanungsexperte mit Schwerpunkt auf Wasser- und Energieressourcen in alpinen Regionen.
+      Ich verbinde hydrogeologische Feldkompetenz, komplexe Datenanalysen und die Entwicklung praxisorientierter
+      digitaler Tools zu integrierten Lösungen für Planer, Berater und öffentliche Auftraggeber.
+      Mehrjährige Erfahrung in der Übersetzung komplexer technischer Inhalte für nicht-technische Entscheidungsträger
+      sowie in der Automatisierung wiederkehrender Analyseprozesse durch maßgeschneiderte Software-Tools.
+    </p>
+    <div class="profil-highlights">
+      <div class="highlight-pill">Hydrogeologie</div>
+      <div class="highlight-pill">Trinkwasserversorgung &amp; Wasserkraftpotenzial</div>
+      <div class="highlight-pill">Modellierung und Simulation</div>
+      <div class="highlight-pill">Kommunale Energieraumplanung</div>
+      <div class="highlight-pill">GIS &amp; räumliche Analysen</div>
+      <div class="highlight-pill">Datenmanagement und Software-Tools</div>
+    </div>
+  </section>
+
+  <!-- BERUFSERFAHRUNG -->
+  <section id="erfahrung">
+    <div class="section-header"><h2>Berufserfahrung</h2></div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="tl-date">
+          2024 – laufend
+          <span class="tl-org">Energieagentur Tirol</span>
+        </div>
+        <div class="tl-content">
+          <h3>Projektleiter</h3>
+          <p>
+            Konzeptionierungen und Machbarkeitsstudien in den Bereichen Trinkwasserversorgung,
+            Kleinwasserkraftanlagen, kommunale Energieraumplanung und Geothermie.
+            Hydro(geo)logische Geländearbeit, räumliche Analysen und Niederschlag-Abfluss-Modellierung
+            als methodische Grundlage für Planungsentscheidungen.
+          </p>
+          <p>
+            Entwicklung interner Python-basierter Analyse- und Berechnungstools und
+            Web-Apps für den Einsatz innerhalb der Energieagentur Tirol. Aufbau standardisierter, reproduzierbarer
+            Analyseworkflows und einer internen Python-Codebase für projektübergreifende Nutzung.
+          </p>
+          <div class="tl-tags">
+            <span class="tag">Energieraumplanung</span>
+            <span class="tag">Hydrogeologie</span>
+            <span class="tag">Python</span>
+            <span class="tag">QGIS, ArcGIS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-date">
+          2019 – 2024
+          <span class="tl-org">Universität Innsbruck</span>
+        </div>
+        <div class="tl-content">
+          <h3>Universitätsassistent</h3>
+          <p>
+            Forschung zu Permafrost und Klimawandel: Laborarbeit, Expeditionen und Geländearbeit,
+            numerische Modellierung sowie selbstständige Lehrtätigkeit in GIS und räumlicher
+            Statistik auf BSc- und MSc-Niveau.
+          </p>
+          <div class="tl-tags">
+            <span class="tag">Forschung</span>
+            <span class="tag">Numerische Modellierung</span>
+            <span class="tag">GIS-Lehre</span>
+            <span class="tag">Zeitreihenanalyse</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-date">
+          2018 – 2020
+          <span class="tl-org">KIT – Campus Garmisch-Partenkirchen</span>
+        </div>
+        <div class="tl-content">
+          <h3>Labormanager</h3>
+          <p>
+            Leitung des Labors für Stabile Isotope. CHNO-Isotopie in biogeochemischen Systemen,
+            Methodenentwicklung und Automatisierung von Messverfahren.
+          </p>
+          <div class="tl-tags">
+            <span class="tag">Labortechnik</span>
+            <span class="tag">Isotopenanalyse</span>
+            <span class="tag">Automatisierung</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-date">
+          2014 – 2018
+          <span class="tl-org">Universität Innsbruck</span>
+        </div>
+        <div class="tl-content">
+          <h3>Laborassistent</h3>
+          <p>
+            Analyse- und Wartungsarbeiten in den Labors der Arbeitsgruppe Quartärgeologie;
+            Geländearbeit bei diversen Projekten (Höhlenexpeditionen, Rammkernsondierungen,
+            hydro(geo)logische Messungen).
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-date">
+          2008 – 2012
+          <span class="tl-org">Selbstständig</span>
+        </div>
+        <div class="tl-content">
+          <h3>Freiberuflicher Tontechniker</h3>
+          <p>Konzerte, Konferenztechnik, Theater und Tonstudio.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AUSBILDUNG -->
+  <section id="ausbildung">
+    <div class="section-header"><h2>Ausbildung</h2></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-date">2019 – 2023<span class="tl-org">Univ. Innsbruck</span></div>
+        <div class="tl-content">
+          <h3>PhD Erdwissenschaften</h3>
+          <p>Doktorarbeit: Permafrost response to climate change during the last glacial period</p>
+          <div class="award-badge">🏆 HYPO Tirol Dissertationspreis 2024</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">2015 – 2018<span class="tl-org">Univ. Innsbruck</span></div>
+        <div class="tl-content">
+          <h3>MSc Erdwissenschaften</h3>
+          <p>Masterarbeit:Cryogenic cave carbonates from the Ural Mountains (Russia)</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">2012 – 2015<span class="tl-org">Univ. Innsbruck</span></div>
+        <div class="tl-content">
+          <h3>BSc Erdwissenschaften</h3>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">2004 – 2006<span class="tl-org">SAE München</span></div>
+        <div class="tl-content">
+          <h3>Audio Engineering Diplom</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJEKTE -->
+  <section id="projekte">
+    <div class="section-header"><h2>Projekte (Auswahl)</h2></div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>JAZ-Berechnungstool (Wärmepumpen)</h3>
+        <p>Web-Applikation zur Berechnung der Jahresarbeitszahl von Wärmepumpen nach Bin-Methode mit INCA-Klimadaten (GEOSPHERE Austria) für Energieberater.</p>
+        <div class="proj-tags tl-tags">
+          <span class="tag">Programmierung</span><span class="tag">Klimadaten</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Großquellenhydrogeologie Tirol (GQH)</h3>
+        <p>Geländeaufnahme, hydrogeologische Analyse und wasserwirtschaftliche Beurteilung der 93 Tiroler Großquellen 
+          zur strategischen Trinkwasserversorgung im Auftrag der Tiroler Landesregierung.</p>
+        <div class="proj-tags tl-tags">
+          <span class="tag">Hydrogeologie</span><span class="tag">Datenmanagement</span><span class="tag">GIS</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Universelles Abflussmodell Tirol</h3>
+        <p>Entwicklung eines universellen Niederschlags-Abfluss-Modells für Tirol mittels Machine Learning.</p>
+        <div class="proj-tags tl-tags">
+          <span class="tag">künstliche Intelligenz</span><span class="tag">Hydrologie</span><span class="tag">Datenmanagement</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Kommunale Energieversorgungskonzepte</h3>
+        <p>Analyse von Energiebedarf und Ressourcenangebot für Gemeinden als Planungsgrundlage für kommunale Wärme- und Energieversorgung.</p>
+        <div class="proj-tags tl-tags">
+          <span class="tag">Energieraumplanung</span><span class="tag">GIS</span><span class="tag">Datenmanagement</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Anergienetz Auffach / Wildschönau</h3>
+        <p>Machbarkeitsstudie für ein Niedertemperatur-Wärmenetz durch thermische Nutzung von Quellwasser.</p>
+        <div class="proj-tags tl-tags">
+          <span class="tag">Energieraumplanung</span><span class="tag">Hydrogeologie</span><span class="tag">Stakeholder-Management</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Wasserkraftpotenzial Reutte</h3>
+        <p>Potenzialstudie für Wasserkraftnutzung im gesamten Bezirk Reutte.</p>
+        <div class="proj-tags tl-tags">
+          <span class="tag">Wasserkraft</span><span class="tag">Programmierung</span><span class="tag">GIS</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Mount Resilience</h3>
+        <p>EU-Projekt zur Klimawandelanpassung in Bergregionen. Analyse von Klimadaten auf Gemeindeebene.
+          Entwicklung eines online-Tools für Gemeinden</p>
+        <div class="proj-tags tl-tags">
+          <span class="tag">Datenmanagement</span><span class="tag">Klimaanpassung</span><span class="tag">Programmierung</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header"><h2>Skills &amp; Werkzeuge</h2></div>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <h3>Programmierung</h3>
+        <div class="skill-row"><span class="skill-name">Python – Scientific Stack (NumPy, Pandas, SciPy, Xarray)</span><span class="skill-level level-expert">Experte</span></div>
+        <div class="skill-row"><span class="skill-name">Python – Geospatial Stack (GDAL, GeoPandas, Cartopy)</span><span class="skill-level level-expert">Experte</span></div>
+        <div class="skill-row"><span class="skill-name">Python – Web Apps (Streamlit, Flask)</span><span class="skill-level level-advanced">Fortgeschritten</span></div>
+        <div class="skill-row"><span class="skill-name">Python – ML / Modellierung (Scikit-learn, PyTorch)</span><span class="skill-level level-advanced">Fortgeschritten</span></div>
+        <div class="skill-row"><span class="skill-name">SQL</span><span class="skill-level level-advanced">Fortgeschritten</span></div>
+        <div class="skill-row"><span class="skill-name">HTML / CSS</span><span class="skill-level level-basic">Grundkenntnisse</span></div>
+        <div class="skill-row"><span class="skill-name">R, Matlab</span><span class="skill-level level-basic">Grundkenntnisse</span></div>
+      </div>
+
+      <div class="skill-group">
+        <h3>GIS &amp; CAD</h3>
+        <div class="skill-row"><span class="skill-name">QGIS</span><span class="skill-level level-expert">Experte</span></div>
+        <div class="skill-row"><span class="skill-name">ArcGIS Pro</span><span class="skill-level level-expert">Experte</span></div>
+        <div class="skill-row"><span class="skill-name">AutoCAD</span><span class="skill-level level-basic">Grundkenntnisse</span></div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Office &amp; Visualisierung</h3>
+        <div class="skill-row"><span class="skill-name">MS Office (inkl. Excel, Power Query)</span><span class="skill-level level-expert">Experte</span></div>
+        <div class="skill-row"><span class="skill-name">Corel Draw</span><span class="skill-level level-expert">Experte</span></div>
+        <div class="skill-row"><span class="skill-name">Agisoft Metashape</span><span class="skill-level level-basic">Grundkenntnisse</span></div>
+        <div class="skill-row"><span class="skill-name">GIMP / Inkscape</span><span class="skill-level level-basic">Grundkenntnisse</span></div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Sprachen</h3>
+        <div class="skill-row"><span class="skill-name">Deutsch</span><span class="skill-level level-expert">Muttersprache</span></div>
+        <div class="skill-row"><span class="skill-name">Englisch</span><span class="skill-level level-expert">Fließend</span></div>
+        <div class="skill-row"><span class="skill-name">Italienisch</span><span class="skill-level level-basic">Grundkenntnisse</span></div>
+        <div class="skill-row"><span class="skill-name">Niederländisch</span><span class="skill-level level-basic">Grundkenntnisse</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPEDITIONEN -->
+  <section id="expeditionen">
+    <div class="section-header"><h2>Expeditionen &amp; Geländearbeit</h2></div>
+    <div class="expedition-list">
+
+      <div class="exp-item">
+        <div class="exp-where">Tirol<span>2024 – laufend</span></div>
+        <div class="exp-desc">Hydrogeologische Geländearbeiten im Rahmen der Projekte zur strategischen Trinkwasserversorgung im Auftrag der Tiroler Landesregierung.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-where">Großbritannien<span>2019 – 2022</span></div>
+        <div class="exp-desc">Probenahmen und Vermessungen in den Karstgebieten Englands (Peak District, Mendips Hills) im Rahmen der Dissertation.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-where">Nordost-Grönland<span>2019</span></div>
+        <div class="exp-desc">Mehrwöchige Expedition nach Kronprins-Christian Land (Grönland-Höhlenprojekt, Prof. G.E. Moseley): Höhlenforschung, Stratigraphie paläozoischer Karbonatabfolgen, Kartierung spätglazialer Moränenabfolgen.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-where">Bayern<span>2018 – 2019</span></div>
+        <div class="exp-desc">Bodenkundliche Projekte der Arbeitsgruppe für Biogeochemische Kreisläufe am KIT Garmisch-Partenkirchen.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-where">Russland (Ural)<span>2017</span></div>
+        <div class="exp-desc">Ural-Expedition der AG Quartärgeologie (Dr. Y. Dublyansky): Erkundung und Beprobung von Höhlen in den Karstgebieten der Regionen Perm, Denezhkin Kamen und Bashkortostan.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-where">Japan<span>2016</span></div>
+        <div class="exp-desc">Forschungsfahrt SO-251 (FS Sonne): Japan-Graben und Nankai-Trog. Porenwasserchemie und Chemo-Stratigraphie von Sedimentkernen.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-where">Österreich<span>2014 – 2019</span></div>
+        <div class="exp-desc">Feldforschungsprojekte der AG Quartär (Prof. Ch. Spötl): Höhlenerkundungen, Rammkernsondierungen, hydrogeologische Feldarbeiten.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PUBLIKATIONEN -->
+  <section id="publikationen">
+    <div class="section-header"><h2>Peer-Review Publikationen (Auswahl)</h2></div>
+    <ul class="pub-list">
+      <li><strong>Töchterle, P.</strong>, Baldo, A., Murton, J. B., et al.: Reconstructing Younger Dryas Ground Temperature and Snow Thickness from Cave Deposits. <em>Climate of the Past</em> 20, 2024. <a href="https://doi.org/10.5194/cp-2023-72" target="_blank">→ DOI</a></li>
+      <li><strong>Töchterle, P.</strong>, Steidle, S., Edwards, R. L., et al.: 230Th/U Isochron Dating of Cryogenic Cave Carbonates. <em>Geochronology</em> 4, 2022. <a href="https://doi.org/10.5194/gchron-4-617-2022" target="_blank">→ DOI</a></li>
+      <li><strong>Töchterle, P.</strong>, Yang, F., Rehschuh, S., et al.: Hydraulic Water Redistribution by Silver Fir occurring under Severe Soil Drought. <em>Forests</em> 11, 2020. <a href="https://doi.org/10.3390/f11020162" target="_blank">→ DOI</a></li>
+      <li><strong>Töchterle, P.</strong>, Dublyansky, Y., Stöbener, N., et al.: High-resolution isotopic monitoring of cave air CO2. <em>Rapid Communications in Mass Spectrometry</em> 31, 2017. <a href="https://doi.org/10.1002/rcm.7859" target="_blank">→ DOI</a></li>
+      <li>Seelig, S., Thalheim, F., Seelig, M., <strong>Töchterle, P.</strong>, et al.: Young water fractions in spring discharge. <em>Journal of Hydrology</em> 670, 2026. <a href="https://doi.org/10.1016/j.jhydrol.2026.135221" target="_blank">→ DOI</a></li>    
+      <li>Donner, A., <strong>Töchterle, P.</strong>, Spötl, C., et al.: Cryogenic cave minerals recorded the 1889 CE melt event in northeastern Greenland. <em>Climate of the Past</em> 19, 2023. <a href="https://doi.org/10.5194/cp-19-1607-2023" target="_blank">→ DOI</a></li>
+      <li>Johnston, V. E., Borsato, A., Frisia, S., <strong>Töchterle, P.</strong> et al.: Evidence of thermophilisation during the Last Interglacial in the Italian Alps. <em>Scientific Reports</em> 8, 2018. <a href="https://doi.org/10.1038/s41598-018-21027-3" target="_blank">→ DOI</a></li>
+      <li>Vázquez, E., Teutscherova, N., <strong>Töchterle, P.</strong> et al.: Gross nitrogen transformations in tropical pasture soils. <em>Soil Biology and Biochemistry</em> 151, 2020. <a href="https://doi.org/10.1016/j.soilbio.2020.108058" target="_blank">→ DOI</a></li>
+    </ul>
+    <p style="font-size:13px; color:var(--muted); margin-top:14px;">
+      Vollständige Publikationsliste:
+      <a href="https://scholar.google.at/citations?user=zbVWkZsAAAAJ&hl=de" target="_blank">Google Scholar</a> ·
+      <a href="https://orcid.org/0000-0003-1738-5771" target="_blank">ORCID 0000-0003-1738-5771</a>
+    </p>
+  </section>
+
+  <!-- LEHRE -->
+  <section id="lehre">
+    <div class="section-header"><h2>Lehrtätigkeit</h2></div>
+    <div class="teach-group">
+      <h3>MSc-Niveau</h3>
+      <ul>
+        <li>Einführung in Geographische Informationssysteme – ArcGIS Pro &amp; QGIS (Univ. Innsbruck, 2020, 2021)</li>
+        <li>Räumliche Daten in den Erdwissenschaften – Zeitreihenanalyse, Interpolation, Clusteranalyse (Univ. Innsbruck, 2022, 2023)</li>
+        <li>Quartärgeologisches Geländepraktikum – Kartierung glazio-lakustriner Ablagerungen (Univ. Innsbruck, 2017, 2020–2023)</li>
+      </ul>
+    </div>
+    <div class="teach-group">
+      <h3>BSc-Niveau</h3>
+      <ul>
+        <li>Einführung in die Geländearbeit – Karbonat-Sedimentologie der Nördlichen Kalkalpen (Univ. Innsbruck, 2019–2023)</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ DOWNLOAD ══ -->
+<div class="download-bar">
+  <a href="https://drive.google.com/file/d/11PBmNO5QSufLgmjkpquCMUAIvI47MUWg/view?usp=sharing" target="_blank">
+    ↓ PDF-Version herunterladen
+  </a>
 </div>
 
-</div>
-
-
-<!-- navbar java script -->
-
-<script>
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/paul-toechterle" target="_blank">LinkedIn</a>
+    <a href="https://github.com/paultoechterle/" target="_blank">GitHub</a>
+    <a href="https://www.researchgate.net/profile/Paul-Toechterle-2" target="_blank">ResearchGate</a>
+    <a href="https://scholar.google.at/citations?user=zbVWkZsAAAAJ&hl=de" target="_blank">Google Scholar</a>
+    <a href="https://orcid.org/0000-0003-1738-5771" target="_blank">ORCID</a>
+  </div>
+  <p>Dr. Paul Töchterle · Zirmweg 332/2, A-6311 Wildschönau-Oberau · paul.m.toechterle@gmail.com</p>
+</footer>
 
 </body>
 </html>
-
-
